@@ -24,7 +24,7 @@ public class JwtService {
     /**
      * Metodo che si occupa di estrarre l'username (email)
      * dell'utente associato al token.
-     * @param token
+     * @param token: token jwt
      * @return String: username dell'utente
      */
     public String extractUserName(String token) {

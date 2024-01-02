@@ -1,6 +1,5 @@
 package com.social.config;
 
-import com.social.config.JwtService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
