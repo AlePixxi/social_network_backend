@@ -1,4 +1,4 @@
-package com.proconsul.config;
+package com.social.config;
 
 import com.social.config.JwtService;
 import jakarta.servlet.FilterChain;
