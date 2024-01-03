@@ -24,8 +24,8 @@ public class User implements UserDetails {
     @Id
     private String email;
 
-    @Size(min = 6, max = 32)
-    @Column(name = "password", nullable = false)
+    @Size(min = 6)
+    @Column(name = "password", length = 72, nullable = false)
     private String password;
 
     @Size(min = 1, max = 64)
