@@ -2,7 +2,7 @@ package com.social.service;
 
 import com.social.dto.RegistrazioneUserDTO;
 import com.social.entity.User;
-import com.social.exception.DipendenteEsistenteException;
+import com.social.exception.UtenteEsistenteException;
 import com.social.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -21,13 +21,13 @@ public class RegistrazioneServiceImpl implements RegistrazioneService {
     private final UserRepository repository;
 
     @Override
-    public ResponseEntity<Map<String, String>> registraUtente(RegistrazioneUserDTO userDTO) throws DipendenteEsistenteException {
+    public ResponseEntity<Map<String, String>> registraUtente(RegistrazioneUserDTO userDTO) throws UtenteEsistenteException {
         Map<String, String> response = new HashMap<>();
         User utenteDaSalvare = new User();
 
         try {
             if (repository.findById(userDTO.getEmail()).isPresent()) {
-                throw new DipendenteEsistenteException("Dipendente esistente");
+                throw new UtenteEsistenteException("Dipendente esistente");
             }
 
             utenteDaSalvare.setEmail(userDTO.getEmail());
